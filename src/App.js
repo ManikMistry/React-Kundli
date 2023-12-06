@@ -11,7 +11,8 @@ function App() {
       <ClassComponent/>
       {/* Function Components */}
       <FunctionalComponets/>
-      
+
+      {/* Hooks */}
       <UseState/>
     </div>
   );
