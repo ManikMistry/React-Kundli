@@ -1,24 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 
 function UseState() {
-    const [value, initialValue]= useState(0);
-
-    const increment=()=>{
-        initialValue(value+1);
-        console.log("increment Button triggerd")
+    const [value, setValue]= useState(0);
+    const setStyle=()=>{
+        if(value<0){
+            return "red";
+        }else if(value>=0 && value<=10){
+            return "green";
+        }else{
+            return "yellow"
+        }
     }
-    const decrement=()=>{
-        initialValue(value-1);
-        console.log("decrement Button triggerd")
-    }
-    useEffect(()=>{
-        console.log("hello")
-    },[])
   return (
     <div>
-        <p>{value}</p>
-        <button onClick={decrement}>decrement</button>
-        <button onClick={increment}>increment</button>
+        <p style={{backgroundColor:setStyle(),height:"10vh", width:"10vh", textAlign:"center", margin:"auto"}}>{value}</p>
+        <button onClick={()=>setValue(value-1)}>decrement</button>
+        <button onClick={()=>setValue(value+1)}>increment</button>
     </div>
   )
 }
