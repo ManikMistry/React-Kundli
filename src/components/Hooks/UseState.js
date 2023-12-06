@@ -16,6 +16,7 @@ function UseState() {
         <p style={{backgroundColor:setStyle(),height:"10vh", width:"10vh", textAlign:"center", margin:"auto"}}>{value}</p>
         <button onClick={()=>setValue(value-1)}>decrement</button>
         <button onClick={()=>setValue(value+1)}>increment</button>
+        <button onClick={()=>setValue(0)}>reset</button>
     </div>
   )
 }
