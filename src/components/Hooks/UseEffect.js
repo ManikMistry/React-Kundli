@@ -37,7 +37,6 @@ function UseEffect() {
 
 export default UseEffect;
 
-
 // useEffect
 /*
 useEffect is a hook in React that enables you to perform side effects in your functional components.
