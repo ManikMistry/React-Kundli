@@ -4,6 +4,26 @@ import './CounterApp.css'
 const CounterApp=()=>{
     const [value1,setValue1]=useState('');
     const [value2,setValue2]=useState('');
+    const [result,setResult]=useState('');
+    const [sign,setSign]=useState('');
+
+
+    const onValueChange=(field,value)=>{
+        if(!isNaN(value) || value === ''){
+            if(field === 'feild1'){
+                setValue1(value);
+            }else{
+                setValue2(value)
+            }
+        }
+    }
+
+    const clearFunction=()=>{
+        setValue1('');
+        setValue2('')
+        setResult('')
+        setSign('')
+    }
     return(
         <>
             <div className='input-containers'>
@@ -11,9 +31,11 @@ const CounterApp=()=>{
                 <input 
                 type='number' 
                 required
+                value={value2}
+                onChange={(e)=>onValueChange('value2',e.target.value)}
                 />
                 </div>
-                <p>+</p>
+                <p>{sign}</p>
                 <div className='filed-2'>
                 <input 
                 type='number' 
@@ -24,7 +46,7 @@ const CounterApp=()=>{
                 </div>
                 <p>=</p>
                 <div className='result-feild'>
-                <p className='result'>10</p>
+                <p className='result'>{result}</p>
                 </div>
             </div>
             <div className='buttons'>
@@ -32,12 +54,13 @@ const CounterApp=()=>{
                 <button>-</button>
                 <button>*</button>
                 <button>/</button>
-<button>clear</button>
+                <button onClick={()=>clearFunction}>clear</button>
             </div>
         </>
     )
 }
 
+export default CounterApp;
 
 
 
