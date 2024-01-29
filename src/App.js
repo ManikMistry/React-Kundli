@@ -6,6 +6,7 @@ import UseRef from './components/Hooks/UseRef';
 // import Parent from './components/propsDrilling/Parent';
 import Parent from './components/Hooks/ContextAPI/Parent';
 import UseMemo from './components/Hooks/UseMemo';
+import Component1 from './components/Hooks/useCallback/Component1';
 // import UseEffect from './components/Hooks/UseEffect';
 // import UseState from './components/Hooks/UseState';
 // import { ProductCard } from './components/ProductCard/ProductCard';
@@ -29,7 +30,8 @@ function App() {
       {/* <Parent/> */}
 
       {/* <Parent/> */}
-      <UseMemo/>
+      {/* <UseMemo/> */}
+      <Component1/>
     </div>
   );
 }
